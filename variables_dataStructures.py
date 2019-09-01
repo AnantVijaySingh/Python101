@@ -1,3 +1,4 @@
+# coding=utf-8
 # Assigning values to variables
 mv_population, mv_size = 74728, 11.995
 mv_density = mv_population / mv_size
@@ -111,3 +112,35 @@ print(maria_string.format("math", "statistics"))
 "Weight in tons {0.weight}"       # 'weight' attribute of first positional arg
 "Units destroyed: {players[0]}"   # First element of keyword argument 'players'.
 
+
+new_str = "The cow jumped over the moon."
+print(new_str.split())
+print(new_str.split(' '))
+print(new_str.split(' ', 3))
+print(new_str.split(None, 3))
+
+# ---------------------------------------------------------------------------
+
+verse = "If you can keep your head when all about you\n  Are losing theirs and blaming it on you,\nIf you can trust " \
+        "yourself when all men doubt you,\n  But make allowance for their doubting too;\nIf you can wait and not be " \
+        "tired by waiting,\n  Or being lied about, don’t deal in lies,\nOr being hated, don’t give way to hating," \
+        "\n  And yet don’t look too good, nor talk too wise: "
+
+#    What is the length of the string variable verse?
+#    What is the index of the first occurrence of the word 'and' in verse?
+#    What is the index of the last occurrence of the word 'you' in verse?
+#    What is the count of occurrences of the word 'you' in the verse?
+
+print(len(verse))
+print(verse.find('and', 1))
+print(verse.rfind('you'))
+print(verse.count('you'))
+
+message = "Verse has the length {}. \nThe first occurrence of the word 'and' in verse is at {}\nlast occurrence of the " \
+          "word 'you' in verse? is at {} "
+
+verse_length = len(verse)
+verse_first_idx = verse.find('and', 1)
+verse_last_idx = verse.rfind('you')
+
+print(message.format(verse_length, verse_first_idx, verse_last_idx))
