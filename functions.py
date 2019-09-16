@@ -191,7 +191,7 @@ def solve_number_10():
             print(total)
             return
 
+
 solve_number_10()
 
-
-#TODO: Read https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/
+# TODO: Read https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/
