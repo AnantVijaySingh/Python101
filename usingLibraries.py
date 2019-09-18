@@ -41,7 +41,6 @@ with open(word_file, 'r') as words:
 # concatenated together without spaces
 
 def generate_password(password=""):
-    print('Function Called')
     for i in range(3):
         password += word_list[randrange(0, len(word_list))]
     return password
@@ -49,3 +48,43 @@ def generate_password(password=""):
 
 # test your function
 print(generate_password())
+
+# Question
+# Create a function that opens the flowers.txt, reads every line in it, and saves it as a dictionary. The main (
+# separate) function should take user input (user's first name and last name) and parse the user input to identify
+# the first letter of the first name. It should then use it to print the flower name with the same first letter (from
+# dictionary created in the first function).
+
+# Write your code here
+flower_dictionary = {}
+
+# HINT: create a dictionary from flowers.txt
+with open('testDataFiles/flowers.txt', 'r') as flowers:
+    for flower in flowers:
+        key = flower.split(':')[0].strip().lower()
+        value = flower.split(':')[1].strip()
+        flower_dictionary[key] = value
+
+
+# HINT: create a function to ask for user's first and last name
+def get_user_name():
+    while True:
+        try:
+            full_user_name = raw_input('Enter Name: ')
+            first_name = full_user_name.strip().split(' ')[0]
+            break
+        except Exception as e:
+            print('Please enter acceptable value for name: ', e)
+    return first_name
+
+
+user_name_starting_letter = get_user_name()[0].lower()
+while True:
+    if flower_dictionary.get(user_name_starting_letter):
+        print(flower_dictionary[user_name_starting_letter])
+        break
+    else:
+        print('Could not find results, please try again')
+        user_name_starting_letter = str(get_user_name()[0])
+
+# print the desired output
